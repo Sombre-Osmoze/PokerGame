@@ -1,15 +1,14 @@
 //
-//  PokerGameTests.swift
-//  PokerGameTests
+//  CardsTests.swift
+//  CardsTests
 //
-//  Created by Marcus Florentin on 13/09/2019.
+//  Created by Marcus Florentin on 16/09/2019.
 //  Copyright © 2019 Marcus Florentin. All rights reserved.
 //
 
 import XCTest
-@testable import PokerGame
 
-class PokerGameTests: XCTestCase {
+class CardsTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
