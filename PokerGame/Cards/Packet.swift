@@ -38,7 +38,7 @@ public class Packet : Codable {
 		self.cards = cards
 		deck = cards
 
-		os_log("Creationg packet of %i cards", log: logger, type: .info, cards.count)
+		os_log("Creation packet of %i cards", log: logger, type: .info, cards.count)
 	}
 
 	public func reset() -> Void {
