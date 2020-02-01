@@ -11,23 +11,24 @@ import Foundation
 
 // MARK: - Logging
 
-import os.log
+import Logging
 
-fileprivate let logger = OSLog(subsystem: "black.sombre-osmoze.PokerGame.Packet", category: .pointsOfInterest)
-
-fileprivate let logging = OSLog(subsystem: "black.sombre-osmoze.PokerGame", category: "Packet")
+fileprivate let logger : Logger = .init(label: "poker-game.game")
 
 // MARK: - Game
 
-public class Game: Codable {
+public class Game: Codable, Identifiable {
 
+	public var id : UUID
 
 	public init(users: [User]) {
 
-		self.users = users
-		self.packet = .init()
+		self.id = UUID()
 
-		os_log(.info, log: logger, "New game with %i users", users.count)
+		self.users = users
+		self.packet = .init(game: id)
+
+		logger.info("\(id) Created")
 	}
 
 

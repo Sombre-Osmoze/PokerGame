@@ -8,13 +8,6 @@
 
 import Foundation
 
-// MARK: - Logging
-
-import os.log
-
-fileprivate let logger = OSLog(subsystem: "black.sombre-osmoze.PokerGame.Packet", category: .pointsOfInterest)
-
-fileprivate let logging = OSLog(subsystem: "black.sombre-osmoze.PokerGame", category: "Packet")
 
 // MARK: - Hand
 
@@ -25,7 +18,6 @@ public class Hand : Codable {
 	init(_ deck: Deck) {
 		self.deck = deck
 
-		os_log(.info, log: logger, "New hand")
 	}
 
 }

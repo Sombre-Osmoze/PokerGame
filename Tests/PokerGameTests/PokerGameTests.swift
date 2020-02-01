@@ -19,4 +19,12 @@ class PokerGameTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+	func testExample() {
+//		<#statements#>
+	}
+
+	static var allTests = [
+		("testExample", testExample),
+	]
+
 }

@@ -13,10 +13,6 @@ import os.log
 
 import os.log
 
-fileprivate let logger = OSLog(subsystem: "black.sombre-osmoze.PokerGame.Packet", category: .pointsOfInterest)
-
-fileprivate let logging = OSLog(subsystem: "black.sombre-osmoze.PokerGame", category: "Packet")
-
 
 // MARK: - User
 

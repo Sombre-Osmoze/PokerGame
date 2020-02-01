@@ -11,10 +11,14 @@ import Logging
 
 // MARK: - Logging
 
+fileprivate let logger : Logger = .init(label: "poker-game.packet")
 
-public class Packet : Codable {
+// MARK: - Packet
 
-	// MARK: - Packet
+public class Packet : Codable, Identifiable {
+
+	/// The game id that the packet is attached to.
+	public var id: UUID
 
 	/// All availables cards in the packet.
 	public let cards : Deck
@@ -22,14 +26,13 @@ public class Packet : Codable {
 	/// Current cards staying in the packet stack.
 	public var deck : [Card] = []
 
-	private let logger : Logger = .init(label: "poker-game.packet")
-
 	public init(game id: UUID) {
 
-		logger = .init(label: "poker-game.game_\(id.uuidString).packet")
+		self.id = id
+
+		// Creating cards.
 
 		var cards : Deck = []
-
 		Suit.allCases.forEach { (suit) in
 			Symbol.allCases.forEach({ cards.insert(.init(symbol: $0, suit: suit)) })
 		}
@@ -38,13 +41,13 @@ public class Packet : Codable {
 		deck = cards.shuffled()
 
 
-		logger.info("Creation of packet of \(cards.count) cards")
+		logger.info("Game: \(id.uuidString). Creation of packet of \(cards.count) cards")
 	}
 
 	/// Reset the packet stack.
 	public func reset() -> Void {
 		deck = cards.shuffled()
-		logger.info("The packet deck was reseted")
+		logger.info("Game: \(id).The packet deck was reseted")
 	}
 
 	// MARK: - Hand
