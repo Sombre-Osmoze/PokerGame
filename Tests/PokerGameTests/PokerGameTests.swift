@@ -20,7 +20,7 @@ class PokerGameTests: XCTestCase {
     }
 
 	func testExample() {
-//		<#statements#>
+//		
 	}
 
 	static var allTests = [
