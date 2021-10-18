@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import os.log
 
 // MARK: - Logging
 
-import os.log
+import Logging
 
 
 // MARK: - User
