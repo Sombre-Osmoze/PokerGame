@@ -8,7 +8,7 @@
 import XCTest
 @testable import PokerGame
 
-class PacketTests: XCTest {
+class PacketTests: XCTestCase {
 
 
 	func testStandartPacket() {

@@ -41,21 +41,21 @@ public class Packet : Codable, Identifiable {
 		deck = cards.shuffled()
 
 
-		logger.info("Game: \(id.uuidString). Creation of packet of \(cards.count) cards")
+		logger.info("Game - \(id.uuidString): Creation of packet of \(cards.count) cards")
 	}
 
 	/// Reset the packet stack.
 	public func reset() -> Void {
 		deck = cards.shuffled()
-		logger.info("Game: \(id).The packet deck was reseted")
+		logger.info("Game - \(id): The packet deck was reseted")
 	}
 
 	// MARK: - Hand
 
 	/// Default size of one hand.
-	let handSize : Int = 2
+    var handSize : Int = 2
 
-	/// Create
+	/// Create a new hand from the deck.
 	public func newHand() -> Hand {
 		var hand : Deck = []
 
